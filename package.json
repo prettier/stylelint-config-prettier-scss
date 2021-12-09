@@ -1,0 +1,50 @@
+{
+  "name": "stylelint-config-prettier-scss",
+  "version": "1.0.0",
+  "description": "Turns off all SCSS rules that are unnecessary or might conflict with Prettier.",
+  "scripts": {
+    "lint": "npx eslint --fix \"**/*.js\" && npx prettier --write \"**/*.js\"",
+    "test": "node test/checker.js",
+    "cover": "npx c8 npm test"
+  },
+  "keywords": [
+    "stylelint",
+    "prettier",
+    "config",
+    "lint",
+    "css"
+  ],
+  "author": "Shannon Moeller <me@shannonmoeller.com>",
+  "contributors": [
+    "Corentin Tenret <tenretcorentin@gmail.com>"
+  ],
+  "repository": "prettier/stylelint-config-prettier-scss",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "bin": {
+    "stylelint-config-prettier-scss": "bin/check.js",
+    "stylelint-config-prettier-scss-check": "bin/check.js"
+  },
+  "dependencies": {
+    "stylelint-config-prettier": ">=9.0.3"
+  },
+  "peerDependencies": {
+    "stylelint": ">=11.0.0"
+  },
+  "engines": {
+    "node": ">= 12"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 8
+    }
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
