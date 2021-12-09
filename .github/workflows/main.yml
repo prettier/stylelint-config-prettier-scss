@@ -36,13 +36,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - if: matrix.os != 'windows-latest'
+      - if: ${{ matrix.os != 'windows-latest' }}
         env:
           STYLELINT_VERSION: ${{ matrix.dep-versions.stylelint }}
           SCSS_VERSION: ${{ matrix.dep-versions.scss }}
           RECOMMENDED_VERSION: ${{ matrix.dep-versions.recommended }}
         run: npm install --no-save "stylelint@${STYLELINT_VERSION}" "stylelint-scss@{SCSS_VERSION}" "stylelint-config-recommended-scss@${RECOMMENDED_VERSION}"
-      - if: matrix.os == 'windows-latest'
+      - if: ${{ matrix.os == 'windows-latest' }}
         env:
           STYLELINT_VERSION: ${{ matrix.dep-versions.stylelint }}
           SCSS_VERSION: ${{ matrix.dep-versions.scss }}
