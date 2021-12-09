@@ -19,12 +19,16 @@ jobs:
           - windows-latest
         dep-versions:
           - stylelint: 14
+            scss: 4
             recommended: 5
           - stylelint: 13
+            scss: 3
             recommended: 4
           - stylelint: 12
+            scss: 3
             recommended: 4
           - stylelint: 11
+            scss: 3
             recommended: 4
     steps:
       - uses: actions/checkout@v2
@@ -32,8 +36,16 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - env:
+      - if: matrix.os != 'windows-latest'
+        env:
           STYLELINT_VERSION: ${{ matrix.dep-versions.stylelint }}
+          SCSS_VERSION: ${{ matrix.dep-versions.scss }}
           RECOMMENDED_VERSION: ${{ matrix.dep-versions.recommended }}
-        run: npm install --no-save "stylelint@${STYLELINT_VERSION}" "stylelint-config-recommended-scss@${RECOMMENDED_VERSION}"
+        run: npm install --no-save "stylelint@${STYLELINT_VERSION}" "stylelint-scss@{SCSS_VERSION}" "stylelint-config-recommended-scss@${RECOMMENDED_VERSION}"
+      - if: matrix.os == 'windows-latest'
+        env:
+          STYLELINT_VERSION: ${{ matrix.dep-versions.stylelint }}
+          SCSS_VERSION: ${{ matrix.dep-versions.scss }}
+          RECOMMENDED_VERSION: ${{ matrix.dep-versions.recommended }}
+        run: npm install --no-save "stylelint@${env:STYLELINT_VERSION}" "stylelint-scss@${env:SCSS_VERSION}" "stylelint-config-recommended-scss@${env:RECOMMENDED_VERSION}"
       - run: npm test
