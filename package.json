@@ -46,5 +46,8 @@
   },
   "prettier": {
     "singleQuote": true
+  },
+  "devDependencies": {
+    "stylelint-config-recommended-scss": "^8.0.0"
   }
 }
