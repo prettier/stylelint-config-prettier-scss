@@ -11,7 +11,7 @@ async function test() {
 	const fail = await check('./test/fail');
 
 	assert(fail.length > 0);
-	assert(fail.includes('indentation'));
+	assert(fail.includes('scss/operator-no-newline-after'));
 
 	const pass = await check('./test/pass');
 

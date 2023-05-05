@@ -1,6 +1,5 @@
 'use strict';
 
-const cssConfig = require('stylelint-config-prettier');
 const scssConfig = require('./index');
 const stylelint = require('stylelint');
 const { resolve } = require('path');
@@ -11,14 +10,12 @@ function check(path) {
 	const resolvedPath = resolve(process.cwd(), path || '');
 
 	return stylelint
-		.createLinter()
-		.getConfigForFile(resolvedPath)
+		.resolveConfig(resolvedPath)
 		.then((config) => {
 			const prettierRules = {
-				...cssConfig.rules,
 				...scssConfig.rules,
 			};
-			const configRules = config.config.rules;
+			const configRules = config.rules;
 			const conflictingRules = [];
 
 			function isEmpty(value) {
