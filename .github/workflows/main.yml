@@ -16,23 +16,13 @@ jobs:
         node-version:
           - 16
           - 14
-          - 12
         dep-versions:
-          - stylelint: 14
-            scss: 4
-            recommended: 5
-          - stylelint: 13
-            scss: 3
-            recommended: 4
-          - stylelint: 12
-            scss: 3
-            recommended: 4
-          - stylelint: 11
-            scss: 3
-            recommended: 4
+          - stylelint: 15
+            scss: 5
+            recommended: 11
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install

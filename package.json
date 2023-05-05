@@ -26,14 +26,15 @@
     "stylelint-config-prettier-scss": "bin/check.js",
     "stylelint-config-prettier-scss-check": "bin/check.js"
   },
-  "dependencies": {
-    "stylelint-config-prettier": ">=9.0.3"
+  "devDependencies": {
+    "stylelint": "^15.6.1",
+    "stylelint-config-recommended-scss": "^11.0.0"
   },
   "peerDependencies": {
-    "stylelint": ">=11.0.0"
+    "stylelint": ">=15.0.0"
   },
   "engines": {
-    "node": ">= 12"
+    "node": ">= 14"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",

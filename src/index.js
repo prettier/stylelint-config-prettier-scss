@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = {
-	extends: ['stylelint-config-prettier'],
 	rules: {
 		'scss/at-else-closing-brace-newline-after': null,
 		'scss/at-else-closing-brace-space-after': null,
