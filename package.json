@@ -16,7 +16,8 @@
   ],
   "author": "Shannon Moeller <me@shannonmoeller.com>",
   "contributors": [
-    "Corentin Tenret <tenretcorentin@gmail.com>"
+    "Corentin Tenret <tenretcorentin@gmail.com>",
+    "Jordan Hawker <hawker.jordan@gmail.com>"
   ],
   "repository": "prettier/stylelint-config-prettier-scss",
   "license": "MIT",
@@ -34,7 +35,7 @@
     "stylelint": ">=15.0.0"
   },
   "engines": {
-    "node": ">= 14"
+    "node": "14.* || 16.* || >= 18"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -42,10 +43,13 @@
       "node": true
     },
     "parserOptions": {
-      "ecmaVersion": 2019
+      "ecmaVersion": "latest"
     }
   },
   "prettier": {
     "singleQuote": true
+  },
+  "volta": {
+    "node": "18.16.0"
   }
 }

@@ -47,7 +47,7 @@ Then run `npm run stylelint-scss-check`.
 
 ----
 
-[MIT](license)
+[MIT](LICENSE.md)
 
 [downloads-img]: https://img.shields.io/npm/dm/stylelint-config-prettier-scss.svg?style=flat-square
 [npm-img]:       https://img.shields.io/npm/v/stylelint-config-prettier-scss.svg?style=flat-square
