@@ -2,6 +2,7 @@
 
 module.exports = {
 	rules: {
+		'at-rule-empty-line-before': null,
 		'scss/at-else-closing-brace-newline-after': null,
 		'scss/at-else-closing-brace-space-after': null,
 		'scss/at-else-empty-line-before': null,
