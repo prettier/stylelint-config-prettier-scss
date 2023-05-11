@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-prettier-scss",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Turns off all SCSS rules that are unnecessary or might conflict with Prettier.",
   "keywords": [
     "stylelint",
